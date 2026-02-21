@@ -28,7 +28,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white/80 backdrop-blur-lg py-4 shadow-sm' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white/80 backdrop-blur-lg py-4 shadow-sm text-dark' : 'bg-transparent py-6 text-white'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <a href="#home" className="text-2xl font-serif font-bold tracking-widest">
           강다솜 <span className="text-primary">무용가</span>
@@ -161,14 +161,25 @@ const Hero = () => (
 
 const About = () => {
   const education = [
-    { year: '2018 - 2022', title: '한국예술종합학교', desc: '무용원 실기과 현대무용 전공 졸업' },
-    { year: '2015 - 2018', title: '서울예술고등학교', desc: '무용과 졸업' },
+    { year: '2013 - 2017', title: '세종대학교', desc: '무용과 현대무용 졸업' },
+    { year: '2010 - 2013', title: '덕원예술고등학교', desc: '무용과 졸업' },
   ];
 
   const experience = [
-    { year: '2022 - Present', title: '프리랜서 무용가 & 안무가', desc: '다수의 상업 광고 및 뮤직비디오 안무 참여' },
-    { year: '2023 - Present', title: '블랙풀댄스 아카데미', desc: '수석 강사 및 입시반 전임' },
-    { year: '2020 - 2022', title: '국립현대무용단', desc: '객원 무용수 활동' },
+    { year: '2026', title: '엠비규어스 / 국립현대무용단', desc: '‘항해’ 영국공연, 크리틱스초이스 활동예정' },
+    { year: '2018 - Present', title: 'Blackpool dance 대표', desc: '일반인 무용단 연출 및 안무자' },
+    { year: '2025', title: 'FORCE', desc: '미디어+서커스+현대무용 신작 <유영> 출연' },
+    { year: '2025', title: '국립무용단', desc: "안무가 프로젝트 '죽페스' 무용수" },
+    { year: '2025', title: '국립현대무용단 청년단원', desc: "출연작: 정영두 '항해 Voyag‘, 야렉 '잠재 Unseen’" },
+    { year: '2025', title: '오사카엑스포 한국관', desc: '3관 영상 안무감독 및 연출' },
+    { year: '2024', title: '노트르담 드 파리', desc: '뮤지컬 댄서' },
+    { year: '2021 - 2024', title: '국립현대무용단', desc: '<구두점의 나라에서> 출연' },
+    { year: '2020 - 2021', title: '티랩 / move move', desc: '필라테스 및 모던핏 강사' },
+    { year: '2019 - 2021', title: '안다르', desc: '앰버서더 활동' },
+    { year: '2018 - 2020', title: '엠비규어스 컴퍼니', desc: '무용수' },
+    { year: '2018 - 2019', title: '국립현대무용단', desc: '<라벨과 스트라빈스키>, <쓰리볼레로> 출연' },
+    { year: '2017 - 2019', title: '안양예고 영재학급', desc: '현대무용 강사' },
+    { year: '2016 - 2018', title: '서울댄스컴퍼니', desc: '모던발레, 현대무용 SDC 무용단장' },
   ];
 
   return (
@@ -193,7 +204,7 @@ const About = () => {
 
           <div>
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Professional Profile</span>
-            <h2 className="text-5xl font-serif mb-8">무용가 강다솜</h2>
+            <h2 className="text-4xl md:text-5xl font-serif mb-8 leading-tight">무용가 / 안무가 / <br className="hidden md:block" /> 블랙풀댄스 아카데미 대표 강다솜</h2>
             <p className="text-lg text-dark/70 leading-relaxed mb-12">
               현대무용을 기반으로 방송댄스, 창작 안무 등 경계를 넘나드는 퍼포먼스를 선보입니다. 
               신체의 움직임을 통해 보이지 않는 감정을 시각화하고, 관객과 깊은 정서적 교감을 나누는 것을 목표로 합니다.
@@ -245,6 +256,50 @@ const About = () => {
             </div>
           </div>
         </div>
+
+        <div className="mt-24 pt-24 border-t border-black/5">
+          <h3 className="text-2xl font-serif mb-12 flex items-center gap-3">
+            <Award className="text-primary" /> 자격증 및 수상경력
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div>
+              <h4 className="text-lg font-bold mb-6 flex items-center gap-2">
+                <div className="w-2 h-2 bg-primary rounded-full" /> 자격증
+              </h4>
+              <ul className="space-y-4">
+                {[
+                  '국제재활필라테스 자격증 수료',
+                  'Abyasa 아비야사 요가 자격증 수료',
+                  '매트필라테스 자격증 2급 수료'
+                ].map((cert, i) => (
+                  <li key={i} className="flex items-start gap-3 text-dark/70">
+                    <span className="text-primary mt-1">•</span>
+                    <span>{cert}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-bold mb-6 flex items-center gap-2">
+                <div className="w-2 h-2 bg-primary rounded-full" /> 수상경력
+              </h4>
+              <ul className="space-y-4">
+                {[
+                  '2016 KIMDC 컨템포러리 무용 준결선진출',
+                  '2016 제34회 전국대학무용 콩쿠르 전체 2위 \'은상\'',
+                  '2016 동아무용콩쿠르 본선합격 후 일반부 \'4위\'',
+                  '2014 (사)한국현대무용협회 21회 \'장려상\'',
+                  '2014 문예총 장관상 국제 콩쿠르 \'은상\''
+                ].map((award, i) => (
+                  <li key={i} className="flex items-start gap-3 text-dark/70">
+                    <span className="text-primary mt-1">•</span>
+                    <span>{award}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -252,7 +307,7 @@ const About = () => {
 
 const Portfolio = () => {
   const [items, setItems] = useState<PortfolioItem[]>([]);
-  const [filter, setFilter] = useState('All');
+  const [filter, setFilter] = useState('공연 및 출연');
 
   useEffect(() => {
     fetch('/api/portfolio')
@@ -260,15 +315,27 @@ const Portfolio = () => {
       .then(setItems);
   }, []);
 
-  const categories = ['All', 'Performance', 'Choreography', 'Teaching'];
-  const filteredItems = filter === 'All' ? items : items.filter(i => i.category === filter);
+  const categories = ['공연 및 출연', '움직임 및 수업영상', '인스타그램'];
+  const filteredItems = items.filter(i => i.category === filter);
+
+  // Group items by year (description field) for Performance category
+  const groupedItems = filter === '공연 및 출연' 
+    ? filteredItems.reduce((acc, item) => {
+        const year = item.description || 'Other';
+        if (!acc[year]) acc[year] = [];
+        acc[year].push(item);
+        return acc;
+      }, {} as Record<string, PortfolioItem[]>)
+    : null;
+
+  const years = groupedItems ? Object.keys(groupedItems).sort((a, b) => b.localeCompare(a)) : [];
 
   return (
     <section id="portfolio" className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <SectionTitle title="Portfolio" subtitle="Selected Works" />
         
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
+        <div className="flex flex-wrap justify-center gap-4 mb-24">
           {categories.map(cat => (
             <button
               key={cat}
@@ -280,35 +347,81 @@ const Portfolio = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredItems.map((item) => (
-            <motion.div 
-              layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              key={item.id}
-              className="group relative aspect-square overflow-hidden rounded-2xl bg-paper"
-            >
-              <img 
-                src={item.thumbnail || `https://picsum.photos/seed/${item.id}/800/800`} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                alt={item.title}
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
-                <span className="text-primary text-xs font-bold tracking-widest uppercase mb-2">{item.category}</span>
-                <h4 className="text-white text-2xl font-serif mb-4">{item.title}</h4>
-                <a 
-                  href={item.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-dark hover:bg-primary hover:text-white transition-colors"
+        <div className="max-w-4xl mx-auto">
+          {filter === '공연 및 출연' && groupedItems ? (
+            <div className="space-y-20">
+              {years.map(year => (
+                <div key={year} className="relative">
+                  <div className="sticky top-24 z-10 mb-8">
+                    <span className="text-6xl font-serif text-primary/10 absolute -top-8 -left-4 select-none">{year}</span>
+                    <h3 className="text-2xl font-serif text-dark relative">{year}</h3>
+                  </div>
+                  <div className="divide-y divide-black/5 border-t border-black/5">
+                    {groupedItems[year].map((item) => (
+                      <motion.div 
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        key={item.id}
+                        className="py-6 flex items-center justify-between group"
+                      >
+                        <div className="flex-1 pr-8">
+                          <h4 className="text-lg font-medium group-hover:text-primary transition-colors duration-300">
+                            {item.title}
+                          </h4>
+                        </div>
+                        <a 
+                          href={item.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-dark/20 hover:text-primary transition-colors p-2"
+                        >
+                          {item.type === 'Video' ? <Play size={18} /> : <ChevronRight size={18} />}
+                        </a>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="divide-y divide-black/5 border-t border-black/5">
+              {filteredItems.map((item) => (
+                <motion.div 
+                  layout
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  key={item.id}
+                  className="py-10 flex flex-col md:flex-row md:items-center justify-between group"
                 >
-                  {item.type === 'Video' ? <Play size={20} /> : <ImageIcon size={20} />}
-                </a>
-              </div>
-            </motion.div>
-          ))}
+                  <div className="mb-6 md:mb-0 md:pr-10">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase px-2 py-1 bg-primary/5 rounded">
+                        {item.category}
+                      </span>
+                      <span className="text-dark/20 text-[10px] font-bold tracking-[0.2em] uppercase">
+                        {item.type}
+                      </span>
+                    </div>
+                    <h4 className="text-2xl md:text-3xl font-serif group-hover:text-primary transition-colors duration-500 leading-tight">
+                      {item.title}
+                    </h4>
+                  </div>
+                  <a 
+                    href={item.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 text-xs font-bold tracking-[0.2em] uppercase text-dark/40 hover:text-primary transition-all duration-300 group/link"
+                  >
+                    <span className="border-b border-transparent group-hover/link:border-primary pb-1">View Project</span>
+                    <div className="w-8 h-8 rounded-full border border-dark/10 flex items-center justify-center group-hover/link:border-primary group-hover/link:bg-primary group-hover/link:text-white transition-all">
+                      <ChevronRight size={14} />
+                    </div>
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
@@ -653,7 +766,7 @@ const Footer = () => (
   <footer className="py-20 bg-dark text-white border-t border-white/5">
     <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10">
       <div className="text-center md:text-left">
-        <h3 className="text-2xl font-serif font-bold tracking-widest mb-4">강다솜 <span className="text-primary">무용가</span></h3>
+        <h3 className="text-2xl font-serif font-bold tracking-widest mb-4"><span className="text-white">강다솜</span> <span className="text-primary">무용가</span></h3>
         <p className="text-white/30 text-sm">© 2026 강다솜 무용가. All rights reserved.</p>
       </div>
       
